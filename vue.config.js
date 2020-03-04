@@ -6,7 +6,6 @@ const os = require('os')
 const happyThreadPool = HappyPack.ThreadPool({
     size: os.cpus().length
 })
-console.log(os,'8888888')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const buildMsg = 'build at ' + new Date()
 
@@ -23,23 +22,17 @@ module.exports = {
             .set('_c', resolve('src/components'))
             .set('libs', resolve('src/libs'))
         const jsRule = config.module.rule('js')
-        // clear all existing loaders.
-        // if you don't do this, the loader below will be appended to
-        // existing loaders of the rule.
         jsRule.uses.clear()
-        // add replacement loader(s)
         jsRule.use('happypack/loader?id=happy-babel-js').loader('happypack/loader?id=happy-babel-js')
     },
     lintOnSave: false,
     devServer: {
         disableHostCheck: true,
-        port: 8050, //端口号
+        port: 8080, //端口号
         https: false, // https:{type:Boolean}
         open: true, //配置自动启动浏览器
         proxy: {
             '/eop-boot': {
-                // target: 'http://localhost:80/',
-                //target:'http://172.168.108.66:8080',
                 target: 'http://newweb.eptison.com/',
                 // pathRewrite: { '^/api': '' },
                 changeOrigin: true,

@@ -7,26 +7,6 @@
       </b-scroll>
       
       <article class="empty-search-result" v-show="isEmptySearchResult">暂无此搜索结果~~</article>
-
-      <!-- 搜索历史 -->
-      <div class="search-history-wrap" v-if="!searchKeyword && !isEmptySearchResult && searchHistoryList.length">
-        <section class="s-h-title">
-          <span>搜索历史</span>
-          <span class="s-h-clear" @click="DeleteSearchHisory"><van-icon name="delete" /></span>
-        </section>
-        <section class="s-h-list">
-          <span class="s-h-name" v-for="(item, index) in searchHistoryLimitList" :key="index" @click="clickSearch(item)">
-            {{ item }}
-          </span>
-          <p class="more" v-show="searchHistoryList.length > 5" @click="clickMore">
-            {{ limit === 5 ? '展开更多历史' : '收起更多历史' }}
-            <van-icon v-if="limit === 5" name="arrow-down" />
-            <van-icon v-else name="arrow-up" />
-          </p>
-        </section>
-      </div>
-      
-      <article class="empty-search-history" v-show="!searchResult.length && !searchHistoryList.length && !isEmptySearchResult">暂无搜索历史~~</article>
       <!-- 加载状态 -->
       <loading :loadingStatus="searchStatus" type="spinner" />
     </div>
@@ -42,11 +22,11 @@
     name: "Search",
     mixins: [ GoodsMixin ],
     props: {
-      searchResult: { type: Array, default: () => [] },
-      searchKeyword: { type: String, default: '' }, // 搜索关键字
-      searchStatus: { type: Boolean, default: false }, // 搜索状态
-      isEmptySearchResult: { type: Boolean, default: false }, // 是否无搜索结果
-      isloadMore: { type: Boolean, default: false } // 是否加载更多
+       searchResult: { type: Array, default: () => [] },
+       searchKeyword: { type: String, default: '' }, // 搜索关键字
+       searchStatus: { type: Boolean, default: false }, // 搜索状态
+       isEmptySearchResult: { type: Boolean, default: false }, // 是否无搜索结果
+       isloadMore: { type: Boolean, default: false } // 是否加载更多
     },
     components: { GoodsList, BScroll },
     data() {
