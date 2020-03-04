@@ -78,7 +78,8 @@
         ],
         userInfo: null, // 用户信息
         orderNum: [], // 订单对应处理数量
-        isShowSetting: false // 是否显示用户设置
+        isShowSetting: false, // 是否显示用户设置
+         userToken:'',
       }
     },
     watch: {
@@ -144,5 +145,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import './style.scss';
+     @import './style.scss';
 </style>

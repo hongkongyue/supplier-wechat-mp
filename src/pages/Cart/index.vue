@@ -94,6 +94,7 @@
         checkedColor: '#b532e9', // 选中器颜色
         isShowMange: false, // 是否显示管理：移除
         delGoodsIds: [], // 需要移除购物车的商品 ids
+        userToken:''
       }
     },
     computed: {
