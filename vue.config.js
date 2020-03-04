@@ -8,7 +8,6 @@ const happyThreadPool = HappyPack.ThreadPool({
 })
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const buildMsg = 'build at ' + new Date()
-
 const resolve = dir => {
     return path.join(__dirname, dir)
 }
