@@ -9,5 +9,12 @@ const mutations = {
   [types.TEMP_ADDRESS](state, tempAddress) {
     state.tempAddress = tempAddress;
   },
+  [types.INCREASE_INDEX](state,item){
+    console.log(item,'9090')
+    state.indexList.push(item)
+  },
+  [types.DECREASE_INDEX](state,item){
+    state.indexList.splice(1,item)
+   },
 };
 export default mutations;

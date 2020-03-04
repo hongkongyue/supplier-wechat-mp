@@ -4,7 +4,7 @@ const searchHistoryList = state => state.searchHistoryList; // 搜索历史列�
 const locationCity = state => state.locationCity; // 搜索历史列表
 
 export default {
-                   categoryList,       // 大分类列表
-                   searchHistoryList, // 搜索历史列表
-                   locationCity,
+                    categoryList,       // 大分类列表
+                    searchHistoryList, // 搜索历史列表
+                    locationCity,
 }

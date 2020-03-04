@@ -12,6 +12,8 @@
       <transition name="cancel-bounce">
         <section class="cancel" v-show="isShowSearch" @click="cancelSearch">取消</section>
       </transition>
+       <li v-for="v in indexList">{{v}}</li>
+       <button @click="add">新增</button>
     </header>
     <!-- 内容区 -->
     <section class="content" v-if="homeData" @touchstart.prevent="touchstart" @touchmove.prevent="touchmove" @touchend.prevent="touchend">
@@ -77,7 +79,7 @@
   import { loadMixin } from '@/mixins/loadMixin';
   import { throttle } from '@/utils/tools'; // 导入节流函数
   import ajax from '@/api';
-
+  import { mapState } from 'vuex'
   export default {
     name: 'Home',
     mixins: [ GoodsMixin, loadMixin ],
@@ -101,6 +103,9 @@
         opac: 0,
       };
     },
+     computed: mapState({
+                indexList    : state => state.indexList,
+      }),
     watch: {
       // 监听定位城市变化 | 值在 GoodsMixin 中
       locationCity(newCity, old) {
@@ -128,6 +133,10 @@
       this.unWatch();
     },
     methods: {
+      add(){
+        this.$store.dispatch('setIncrease',9)
+        console.log(this.$store.state.indexList)
+      },
       /**
        * ip 定位城市
        */

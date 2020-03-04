@@ -8,6 +8,15 @@ import {
 } from '@/assets/js/cache';
 import * as types from './mutations-type';
 
+// 新增的
+const setIncrease=({commit},item)=>{
+      console.log(item,'街道的值')
+      commit(types.INCREASE_INDEX,item)
+}
+// 减少的
+const setDncrease=({commit},item)=>{
+      commit(types.DECREASE_INDEX,item)
+}
 // 设置大分类列表
 const setCategoryList = ({ commit }, categoryList) => {
   commit(types.CATEGORY_LIST, categoryCache.setCache(categoryList));
@@ -58,6 +67,7 @@ const deleteAddressInfo = ({ commit }) => {
   commit(types.ADDRESS_INFO, addressInfoCache.deleteCache());
 };
 export default {
+  setIncrease,
   setCategoryList, // 设置大分类列表
   setLocationCity, // 设置定位城市
   deleteLocationCity, // 删除定位城市
