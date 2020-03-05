@@ -16,6 +16,7 @@
     name: 'App',
     provide () {
       return {
+               name:'就是这个意思的呢'    
       }
     },
   components: { FooterNav },
@@ -35,10 +36,10 @@
           const toName = to.name;
           const fromName = from.name;
           switch (toName) {
-            case 'Home': this.activeNavIndex = 0; break;
-            case 'Category': this.activeNavIndex = 1; break;
-            case 'Cart': this.activeNavIndex = 2; break;
-            case 'Me': this.activeNavIndex = 3; break;
+              case 'Home': this.activeNavIndex = 0;     break;
+              case 'Category': this.activeNavIndex = 1; break;
+              case 'Cart': this.activeNavIndex = 2;     break;
+              case 'Me': this.activeNavIndex = 3;       break;
           }
       }
     },
