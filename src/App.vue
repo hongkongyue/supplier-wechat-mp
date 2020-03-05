@@ -16,6 +16,7 @@
     name: 'App',
     provide () {
       return {
+              username:'哈哈哈'
       }
     },
   components: { FooterNav },
